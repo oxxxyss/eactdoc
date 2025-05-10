@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="name">Электронный архив копий технической документации</h1>
+    </header>
+    <main>
+        <div class="search">
+            <h3 class="search-text">Введите индекс или номер альбома</h3>
+            <input class="input" type="text" pattern="\d{8}" placeholder="Введите восьмизначное число" maxlength="8" required>
+            <button class="search-button" id="button">
+                <span class="button-text">Поиск</span>
+            </button>
+        </div>
+        <table id="table">
+            <th>Дата</th>
+            <td>20.11.2024</td>
+            <th>ФИО</th>
+            <td>Иванов Иван Иванович</td>
+            <th>Отдел</th>
+            <td>КБ-1</td>
+            <th>Телефон</th>
+            <td>4-90-82</td>
+        </table>
+    </main>
+    
+    <footer>
+        <p>2025</p>
+    </footer>
+    <script>
+        let table = document.getElementById('table')
+        document.getElementById('button').addEventListener('click', function(){
+            let input = document.querySelector('.input');
+            if (input.value.length !== 8) {
+                alert('Пожалуйста, введите ровно 8 цифр');
+            } else {
+                table.style.display = 'block';
+            };
+        });
+    </script>
+</body>
+
+</html>
